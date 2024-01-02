@@ -12,12 +12,12 @@ const Product = ({ product }) => {
             </Link>
             <Card.Body>
                 <Link to={`/product/${product._id}`}>
-                    <Card.Title as='div'>
+                    <Card.Title className='product-title'>
                         <strong>{product.name} </strong>    
                     </Card.Title>    
                 </Link>
                 <Card.Text as='div'>
-                    <Rating value= {product.Rating} text={`${product.numReviews} reviews` } >
+                    <Rating value= {product.rating} text={`${product.numReviews} reviews` } >
                     </Rating>
                 </Card.Text>
                 <Card.Text as="h3">
@@ -26,7 +26,7 @@ const Product = ({ product }) => {
             </Card.Body>
             <Card.Footer>
                 { product.countInStock <= 0 &&
-                    <p class="text-danger" align='right' > Out Of Stock</p>
+                    <p className="text-danger" align='right' > Out Of Stock</p>
                 }
             </Card.Footer>
         </Card>
